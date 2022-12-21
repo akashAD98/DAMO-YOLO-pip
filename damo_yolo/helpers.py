@@ -187,37 +187,45 @@ for i in range(80):
 COCO_CLASSES = tuple(COCO_CLASSES)
 
 class DAMO_YOLO:
-    
-    def make_parser():
-        parser = argparse.ArgumentParser('damo eval')
+        def __init__(
+                self,
+                config_file =None,
+                path = .'/assets/dog.jpg',
+                ckpt = 'weights/damo.ckpt',
+                conf = 0.6,
+                img_size = 640) :
+                     
+                     
+#     def make_parser():
+#         parser = argparse.ArgumentParser('damo eval')
 
-        parser.add_argument(
-            '-f',
-            '--config_file',
-            default=None,
-            type=str,
-            help='pls input your config file',
-        )
-        parser.add_argument('-p',
-                            '--path',
-                            default='./assets/dog.jpg',
-                            type=str,
-                            help='path to image')
-        parser.add_argument('-c',
-                            '--ckpt',
-                            default=None,
-                            type=str,
-                            help='ckpt for eval')
-        parser.add_argument('--conf',
-                            default=0.6,
-                            type=float,
-                            help='conf of visualization')
+#         parser.add_argument(
+#             '-f',
+#             '--config_file',
+#             default=None,
+#             type=str,
+#             help='pls input your config file',
+#         )
+#         parser.add_argument('-p',
+#                             '--path',
+#                             default='./assets/dog.jpg',
+#                             type=str,
+#                             help='path to image')
+#         parser.add_argument('-c',
+#                             '--ckpt',
+#                             default=None,
+#                             type=str,
+#                             help='ckpt for eval')
+#         parser.add_argument('--conf',
+#                             default=0.6,
+#                             type=float,
+#                             help='conf of visualization')
 
-        parser.add_argument('--img_size',
-                            default=640,
-                            type=int,
-                            help='test img size')
-        return parser
+#         parser.add_argument('--img_size',
+#                             default=640,
+#                             type=int,
+#                             help='test img size')
+#         return parser
 
 
     @logger.catch
