@@ -17,6 +17,24 @@ Welcome to **DAMO-YOLO**! It is a fast and accurate object detection method, whi
 ## Web Demo
 - [DAMO-YOLO-T](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo-t/summary), [DAMO-YOLO-S](https://modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo/summary), [DAMO-YOLO-M](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo-m/summary) is integrated into ModelScope. Try out the Web Demo.
 
+
+
+###
+
+```
+pip install damo_yolo_detect
+```
+
+
+```
+from modelscope.pipelines import pipeline
+from modelscope.utils.constant import Tasks
+object_detect = pipeline(Tasks.image_object_detection,model='damo/cv_tinynas_object-detection_damoyolo')
+img_path ='https://modelscope.oss-cn-beijing.aliyuncs.com/test/images/image_detection.jpg'
+result = object_detect(img_path)
+
+```
+
 ## Model Zoo
 |Model |size |mAP<sup>val<br>0.5:0.95 | Latency T4<br>TRT-FP16-BS1| FLOPs<br>(G)| Params<br>(M)| Download |
 | ------        |:---: | :---:     |:---:|:---: | :---: | :---:|
