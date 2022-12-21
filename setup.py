@@ -66,7 +66,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
 
 setuptools.setup(
-    name='damo_yolo',
+    name='damo_yolo_detect',
     version=version,
     author='Akash_Desai',
     
